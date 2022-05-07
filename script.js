@@ -1,20 +1,25 @@
 const gridContainer = document.querySelector('.gridContainer');
-// const pixel = document.createElement('div');
-// gridContainer.appendChild(pixel);
-// pixel.classList.add('pixel');
+const input = document.querySelector('input');
 
 function createGrid(input) {
-	const gridContainer = document.querySelector('.gridContainer');
-	for (let i = 0; i < input; i++) {
-		const row = document.createElement('div');
-		row.className = 'row';
-		for (let j = 1; j <= input; j++) {
-			const pixel = document.createElement('div');
-			pixel.className = 'pixel';
-			pixel.innerText = i * input + j;
-			row.appendChild(pixel);
+	if (input > 128) {
+		alert('please enter a number less than 64');
+	} else {
+		const gridContainer = document.querySelector('.gridContainer');
+		for (let i = 0; i < input; i++) {
+			const row = document.createElement('div');
+			row.className = 'row';
+			for (let j = 1; j <= input; j++) {
+				const pixel = document.createElement('div');
+				pixel.className = 'pixel';
+				row.appendChild(pixel);
+			}
+			gridContainer.appendChild(row);
 		}
-		gridContainer.appendChild(row);
 	}
 }
-createGrid(16);
+
+input.addEventListener('change', function () {
+	let num = document.querySelector('input').value;
+	createGrid(num);
+});
