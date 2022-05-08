@@ -1,9 +1,9 @@
 const gridContainer = document.querySelector('.gridContainer');
-const input = document.querySelector('input');
+const slider = document.querySelector('#slider');
 
 function createGrid(input) {
 	if (input > 128) {
-		alert('please enter a number less than 64');
+		alert('please enter a number less than 128');
 	} else {
 		const gridContainer = document.querySelector('.gridContainer');
 		for (let i = 0; i < input; i++) {
@@ -19,7 +19,19 @@ function createGrid(input) {
 	}
 }
 
-input.addEventListener('change', function () {
-	let num = document.querySelector('input').value;
+const rangeValue = document.querySelector('#rangValue');
+
+slider.addEventListener('mousemove', function () {
+	let num = document.querySelector('#slider').value;
+	rangeSlide(num);
+});
+
+slider.addEventListener('change', function () {
+	let num = document.querySelector('#slider').value;
 	createGrid(num);
 });
+
+function rangeSlide(value) {
+	output = `${value} x ${value}`;
+	document.querySelector('#rangeValue').innerHTML = output;
+}
