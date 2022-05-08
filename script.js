@@ -27,11 +27,17 @@ slider.addEventListener('mousemove', function () {
 });
 
 slider.addEventListener('change', function () {
+	reset();
 	let num = document.querySelector('#slider').value;
+	rangeSlide(num);
 	createGrid(num);
 });
 
 function rangeSlide(value) {
 	output = `${value} x ${value}`;
 	document.querySelector('#rangeValue').innerHTML = output;
+}
+
+function reset() {
+	document.querySelector('.gridContainer').innerHTML = '';
 }
