@@ -46,7 +46,8 @@ body {
 	position: relative;
 	display: block;
 	text-align: center;
-	font-size: 3em;
+	font-size: 2em;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #slider {
@@ -57,5 +58,8 @@ body {
 }
 
 h1 {
-	color: blue;
+	color: rgb(0, 0, 0);
+	font-family: 'Lobster', cursive;
+	font-size: 2em;
+	text-align: center;
 }

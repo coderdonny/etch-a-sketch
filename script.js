@@ -45,7 +45,7 @@ function reset() {
 function gridListener(e) {
 	const element = e.target;
 	if (element.classList.contains('pixel')) {
-		element.style.backgroundColor = 'black';
+		element.style.backgroundColor = randomColor();
 	}
 }
 
@@ -54,3 +54,10 @@ document.addEventListener('mouseover', gridListener);
 const resetButton = document.querySelector('#reset');
 
 resetButton.addEventListener('click', reset);
+
+function randomColor() {
+	let r = Math.floor(Math.random() * 255);
+	let g = Math.floor(Math.random() * 255);
+	let b = Math.floor(Math.random() * 255);
+	return `rgb(${r}, ${g}, ${b})`;
+}
