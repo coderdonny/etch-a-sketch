@@ -41,3 +41,16 @@ function rangeSlide(value) {
 function reset() {
 	document.querySelector('.gridContainer').innerHTML = '';
 }
+
+function gridListener(e) {
+	const element = e.target;
+	if (element.classList.contains('pixel')) {
+		element.style.backgroundColor = 'black';
+	}
+}
+
+document.addEventListener('mouseover', gridListener);
+
+const resetButton = document.querySelector('#reset');
+
+resetButton.addEventListener('click', reset);

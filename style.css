@@ -18,7 +18,16 @@ body {
 	flex: 1;
 	min-width: 1px;
 	min-height: 1px;
+	/* border: 0.1px solid rgba(0, 0, 0, 0.519); */
+	border: none;
+}
+
+.pixel.color {
+	flex: 1;
+	min-width: 1px;
+	min-height: 1px;
 	border: 0.1px solid rgba(0, 0, 0, 0.519);
+	background-color: black;
 }
 
 .gridContainer {
@@ -45,4 +54,8 @@ body {
 	height: 15px;
 	/* -webkit-appearance: none; */
 	background-color: black;
+}
+
+h1 {
+	color: blue;
 }
