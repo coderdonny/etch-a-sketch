@@ -1,3 +1,4 @@
+createGrid(32);
 const gridContainer = document.querySelector('.gridContainer');
 const slider = document.querySelector('#slider');
 
@@ -22,8 +23,7 @@ slider.addEventListener('mousemove', function () {
 	rangeSlide(num);
 });
 
-slider.addEventListener('mouseup', function () {
-	reset();
+slider.addEventListener('mouseup', reset, function () {
 	let num = document.querySelector('#slider').value;
 	createGrid(num);
 });
@@ -35,6 +35,7 @@ function rangeSlide(value) {
 
 function reset() {
 	document.querySelector('.gridContainer').innerHTML = '';
+	defaultGrid();
 }
 
 function gridListener(e) {
@@ -55,4 +56,9 @@ function randomColor() {
 	let g = Math.floor(Math.random() * 255);
 	let b = Math.floor(Math.random() * 255);
 	return `rgb(${r}, ${g}, ${b})`;
+}
+
+function defaultGrid() {
+	let num = document.querySelector('#slider').value;
+	createGrid(num);
 }
