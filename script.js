@@ -41,7 +41,11 @@ function reset() {
 function gridListener(e) {
 	const element = e.target;
 	if (element.classList.contains('pixel')) {
-		element.style.backgroundColor = randomColor();
+		if (colorChoice === 'black') {
+			element.style.backgroundColor = 'black';
+		} else if (colorChoice === 'rainbow') {
+			element.style.backgroundColor = randomColor();
+		}
 	}
 }
 
@@ -62,3 +66,29 @@ function defaultGrid() {
 	let num = document.querySelector('#slider').value;
 	createGrid(num);
 }
+
+let colorChoice = 'black';
+
+const rainbowToggle = document.querySelector('#rainbow');
+
+rainbowToggle.addEventListener('click', function () {
+	const rainbowToggle = document.querySelector('#rainbow');
+	if (rainbowToggle.value === 'YES') {
+		rainbowToggle.innerHTML = 'Rainbox Mode: Off';
+		rainbowToggle.style.backgroundColor = '#e30000';
+		colorChoice = 'black';
+		rainbowToggle.value = 'NO';
+	} else if (rainbowToggle.value === 'NO') {
+		rainbowToggle.innerHTML = 'Rainbox Mode: On';
+		rainbowToggle.style.backgroundColor = 'rgb(8, 188, 8)';
+		colorChoice = 'rainbow';
+		rainbowToggle.value = 'YES';
+	}
+});
+
+// function buttonToggle() {
+
+// 	}
+// }
+
+// let toggled = false;
