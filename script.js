@@ -74,21 +74,14 @@ const rainbowToggle = document.querySelector('#rainbow');
 rainbowToggle.addEventListener('click', function () {
 	const rainbowToggle = document.querySelector('#rainbow');
 	if (rainbowToggle.value === 'YES') {
-		rainbowToggle.innerHTML = 'Rainbox Mode: Off';
+		rainbowToggle.innerHTML = 'Rainbow Mode: Off';
 		rainbowToggle.style.backgroundColor = '#e30000';
 		colorChoice = 'black';
 		rainbowToggle.value = 'NO';
 	} else if (rainbowToggle.value === 'NO') {
-		rainbowToggle.innerHTML = 'Rainbox Mode: On';
+		rainbowToggle.innerHTML = 'Rainbow Mode: On';
 		rainbowToggle.style.backgroundColor = 'rgb(8, 188, 8)';
 		colorChoice = 'rainbow';
 		rainbowToggle.value = 'YES';
 	}
 });
-
-// function buttonToggle() {
-
-// 	}
-// }
-
-// let toggled = false;
